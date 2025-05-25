@@ -31,13 +31,10 @@ public class LoginServlet extends HttpServlet {
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
-                // Simpan info user dalam session (opsional)
                 HttpSession session = request.getSession();
                 session.setAttribute("user", rs.getString("name"));
-                // Redirect ke dashboard.jsp
                 response.sendRedirect("dashboard.jsp");
             } else {
-                // Jika gagal login
                 response.getWriter().println("Email atau password salah.");
             }
         } catch (Exception e) {
