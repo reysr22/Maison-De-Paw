@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
 
             if (rs.next()) {
                 HttpSession session = request.getSession();
-                session.setAttribute("user", rs.getString("name"));
+                session.setAttribute("email", rs.getString("email"));
                 response.sendRedirect("dashboard.jsp");
             } else {
                 response.getWriter().println("Email atau password salah.");
