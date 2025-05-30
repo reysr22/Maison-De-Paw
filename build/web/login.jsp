@@ -5,6 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    String emailError = request.getParameter("emailError");
+    String passwordError = request.getParameter("passwordError");
+    String prevEmail = request.getParameter("email") != null ? request.getParameter("email") : "";
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,11 +25,19 @@
     <form action="login" method="POST" class="space-y-4">
         <div>
             <label for="email" class="block text-sm font-medium">Email</label>
-            <input type="email" id="email" name="email" required class="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="email" id="email" name="email" required value="<%= prevEmail %>"
+                   class="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <% if ("true".equals(emailError)) { %>
+                <p class="text-sm text-red-600 mt-1">E-mail belum terdaftar.</p>
+            <% } %>
         </div>
         <div>
             <label for="password" class="block text-sm font-medium">Password</label>
-            <input type="password" id="password" name="password" required class="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="password" id="password" name="password" required
+                   class="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <% if ("true".equals(passwordError)) { %>
+                <p class="text-sm text-red-600 mt-1">Password Anda salah.</p>
+            <% } %>
         </div>
         <button type="submit" class="w-full bg-black text-white py-2 rounded-full hover:bg-gray-800 transition">
             Login
