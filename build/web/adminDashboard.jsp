@@ -1,6 +1,6 @@
 <%-- 
-    Document   : dashboard.jsp
-    Created on : May 20, 2025, 12:28:00 AM
+    Document   : adminDashboard
+    Created on : Jun 8, 2025, 6:30:30 AM
     Author     : Yoland Handoko
 --%>
 
@@ -15,3 +15,4 @@
         <h1>Hello World!</h1>
     </body>
 </html>
+<!--//ujicoba redirecting-->

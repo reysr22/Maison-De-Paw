@@ -20,8 +20,8 @@
         <div class="text-2xl font-bold">🐾 Maison de Paw</div>
     </div>
     <nav class="hidden md:flex space-x-6 text-sm font-medium">
-        <a href="#" class="hover:text-blue-600">Home</a>
-        <a href="#" class="hover:text-blue-600">Tentang Kami</a>
+        <a href="login.jsp" class="hover:text-blue-600">Home</a>
+        <a href="about.jsp" class="hover:text-blue-600">Tentang Kami</a>
         <a href="#" class="hover:text-blue-600">Layanan</a>
         <a href="#" class="hover:text-blue-600">FAQ</a>
         <a href="#" class="hover:text-blue-600">Kontak</a>
